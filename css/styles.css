@@ -59,6 +59,10 @@ button {
     color: #f4f4fd;
 }
 
+.footer-par {
+    width: 264px;
+}
+
 /* General active and hover designs */
 a:hover,
 a:active,
@@ -399,6 +403,8 @@ a {
 }
 
 .footer .container {
+    width: fit-content;
+    margin: 0 auto;
     display: flex;
 }
 
@@ -948,9 +954,6 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         padding-left: 108px;
         padding-right: 108px;
     }
-    .footer-par {
-        width: 264px;
-    }
     .footer-form-input {
         min-width: 264px;
     }
@@ -970,7 +973,7 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 @media (min-width: 1158px) {
     /* #region general*/
     .container {
-        width: 1158px;
+        min-width: 1158px;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -1031,17 +1034,35 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     /* #endregion */
 
     /* #region footer*/
-    .footer-entity-logo {
-        margin-right: 120px;
-    }
+    /*  */
 
     .footer .container {
         flex-wrap: nowrap;
-        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer-entity-logo,
+    .footer-entity-social,
+    .footer-entity-form {
+        margin: 0 auto;
+    }
+
+    .footer-entity-logo {
+        margin-right: 90px;
+    }
+    .footer-entity-form {
+        margin-left: 60px;
+    }
+    /* #endregion */
+}
+/* 
+@media (min-width: 1358px) {
+    .footer-entity-logo {
+        margin-right: 120px;
     }
 
     .footer-entity-form {
         margin-left: 80px;
     }
-    /* #endregion */
-}
+} */
