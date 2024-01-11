@@ -342,6 +342,7 @@ a {
 .portfolio-page-entity {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -357,6 +358,7 @@ a {
     position: relative;
     margin: 0 auto;
     overflow: hidden;
+    max-width: 360px;
 }
 
 .img {
@@ -974,7 +976,8 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 @media (min-width: 1158px) {
     /* #region general*/
     .container {
-        min-width: 1158px;
+        width: 1158px;
+        margin: auto;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -1027,20 +1030,14 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     .portfolio-page-entity {
         width: calc((100% - (2 * 24px)) / 3);
     }
-    .box {
+    .img,
+    .overlay {
         width: 360px;
         height: 300px;
-    }
-
-    .overlay {
-        width: 100%;
-        height: 100%;
     }
     /* #endregion */
 
     /* #region footer*/
-    /*  */
-
     .footer .container {
         flex-wrap: nowrap;
         padding-left: 0;
@@ -1061,13 +1058,3 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     }
     /* #endregion */
 }
-/* 
-@media (min-width: 1358px) {
-    .footer-entity-logo {
-        margin-right: 120px;
-    }
-
-    .footer-entity-form {
-        margin-left: 80px;
-    }
-} */
