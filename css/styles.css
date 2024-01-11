@@ -798,6 +798,7 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         font-size: 36px;
         line-height: 1.11;
         margin-bottom: 72px;
+        width: 288px;
     }
     /* #endregion */
 
@@ -988,6 +989,10 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     /* #region header*/
     .header-flexbox {
         gap: 76px;
+    }
+    .header-address .header-list {
+        flex-direction: row;
+        gap: 40px;
     }
     /* #endregion */
 
