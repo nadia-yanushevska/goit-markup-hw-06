@@ -35,6 +35,8 @@ p {
 
 /* Logo design */
 .logo {
+    display: flex;
+    align-items: center;
     letter-spacing: 0.03em;
     line-height: 1.17;
     text-transform: uppercase;
@@ -84,16 +86,17 @@ a {
 .header .container {
     display: flex;
     justify-content: space-between;
+    gap: 48px;
 }
 
 .header-list {
     display: inline-flex;
     align-items: flex-start;
-    gap: 40px;
 }
 
 .header-flexbox {
     display: inline-flex;
+    align-items: center;
     gap: 48px;
 }
 
@@ -203,7 +206,7 @@ a {
 }
 
 .card-content {
-    padding: 32px 0;
+    padding: 32px 16px;
 }
 
 .section {
@@ -218,7 +221,6 @@ a {
 }
 
 .flexbox-entity {
-    max-width: 264px;
     display: flex;
     flex-direction: column;
 }
@@ -232,8 +234,6 @@ a {
     background-size: cover;
     color: #fff;
     text-align: center;
-    padding-top: 188px;
-    padding-bottom: 188px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -288,17 +288,21 @@ a {
 }
 
 .rectangle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 112px;
+    display: none;
     border-radius: 4px;
     border: 1px solid #8e8f99;
     background: #f4f4fd;
-    margin-bottom: 8px;
 }
 
+.values-page .card-heading {
+    font-size: 36px;
+    line-height: 1.11;
+    font-weight: 700;
+}
+
+.values-page .flexbox-entity {
+    max-width: 356px;
+}
 /* Team page (third section) designs */
 .team-page {
     background-color: #f4f4fd;
@@ -402,7 +406,6 @@ a {
 
 .footer-entity-form {
     min-width: 453px;
-    margin-left: 80px;
     color: #fff;
 }
 
@@ -692,7 +695,7 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 }
 
 /* Mobile mode - up to 320px */
-@media (max-width: 320px) {
+@media (max-width: 766px) {
     /* #region header */
     .header-flexbox {
         width: 100%;
@@ -719,6 +722,10 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         flex-direction: column;
         padding: 72px 24px 40px 16px;
         overflow: hidden;
+    }
+
+    .menu-modal-active .social-media {
+        width: 100%;
     }
 
     .menu-modal-active .mobile-menu-item {
@@ -804,23 +811,14 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     /* #endregion */
 
     /* #region values */
-    .rectangle {
-        display: none;
-    }
-
     .values-page .card-heading {
         text-align: center;
-        font-size: 36px;
-        line-height: 1.11;
     }
     /* #endregion */
 
     /* #region portfolio */
     .portfolio-page .flexbox {
         flex-direction: column;
-    }
-    .portfolio-page-entity {
-        width: 100%;
     }
 
     .box {
@@ -859,9 +857,6 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     .footer-form-input {
         width: 288px;
     }
-    .footer-form-btn {
-        max-width: 117px;
-    }
     /* #endregion */
 
     /* #region backdrop */
@@ -872,7 +867,7 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     /* #endregion */
 }
 /* Tablet mode - from 768px */
-@media (min-width: 321px) {
+@media (min-width: 768px) {
     /* #region header*/
     #current-page::after {
         display: block;
@@ -887,41 +882,80 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         left: 0;
     }
 
+    .logo {
+        margin-right: 50px;
+    }
+
+    .header .container {
+        justify-content: space-between;
+    }
+
+    .header-list {
+        gap: 40px;
+    }
+
     .header-address .header-list {
         flex-direction: column;
         gap: 12px;
     }
-    /*#endregion */
+    /* #endregion */
 
-    /* #region main-page */
-    /*#endregion */
-
-    /* #region values*/
-    .values-page .card-heading {
-        font-size: 36px;
-        line-height: 1.11;
+    /* #region general */
+    .flexbox {
+        flex-wrap: wrap;
     }
-    /*#endregion */
+    .flexbox-entity {
+        width: calc((100% - 24px) / 2);
+    }
+    /* #endregion */
 
-    /* #region portfolio*/
+    /* #region main */
+    .main-page {
+        padding-top: 112px;
+        padding-bottom: 112px;
+    }
+    /* #endregion */
+
+    /* #region team-page */
+    .team-page .container {
+        padding-left: 108px;
+        padding-right: 108px;
+    }
+
+    .team-page .flexbox-entity {
+        max-width: 264px;
+    }
+    /* #endregion */
+
+    /* #region portfolio */
+    .box {
+        height: 300px;
+    }
     .img,
     .overlay {
         width: 356px;
         height: 300px;
     }
-    /*#endregion */
+    /* #endregion */
 
     /* #region footer*/
+
     .footer .container {
         align-items: baseline;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 24px;
+        row-gap: 72px;
+        padding-left: 108px;
+        padding-right: 108px;
     }
     .footer-form-input {
-        max-width: 264px;
+        min-width: 264px;
     }
     .footer-form-btn {
         min-width: 165px;
     }
-    /*#endregion */
+    /* #endregion */
 
     /* #region modal*/
     .modal-window {
@@ -938,6 +972,9 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         padding-left: 15px;
         padding-right: 15px;
     }
+    .flexbox {
+        flex-wrap: nowrap;
+    }
     .flexbox-entity {
         width: calc((100% - 3 * 24px) / 4);
     }
@@ -945,9 +982,34 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 
     /* #region header*/
     .header-flexbox {
+        gap: 76px;
+    }
+    /* #endregion */
+
+    /* #region section*/
+    .main-page {
+        padding-top: 188px;
+        padding-bottom: 188px;
+    }
+
+    .rectangle {
+        display: flex;
         justify-content: center;
         align-items: center;
-        gap: 76px;
+        width: 100%;
+        height: 112px;
+        margin-bottom: 8px;
+    }
+
+    .values-page .card-heading {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .team-page .container {
+        padding-left: 16px;
+        padding-right: 16px;
     }
     /* #endregion */
 
@@ -970,8 +1032,13 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     .footer-entity-logo {
         margin-right: 120px;
     }
-    /* #endregion */
 
-    /* #region footer*/
+    .footer .container {
+        flex-wrap: nowrap;
+    }
+
+    .footer-entity-form {
+        margin-left: 80px;
+    }
     /* #endregion */
 }
