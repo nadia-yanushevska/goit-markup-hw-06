@@ -43,7 +43,6 @@ p {
     font-size: 18px;
     color: #4d5ae5;
     height: 24px;
-    margin-right: 76px;
 }
 
 .black-logo {
@@ -71,18 +70,12 @@ a {
 
 /* Container */
 .container {
-    width: 1158px;
     margin: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 /* Header desings */
-.header .header-social-media,
-.header .mobile-menu-close {
-    display: none;
-}
-
 .header {
     border-bottom: 1px solid #e7e9fc;
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
@@ -101,9 +94,7 @@ a {
 
 .header-flexbox {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 76px;
+    gap: 48px;
 }
 
 .nav-item {
@@ -123,6 +114,25 @@ a {
 #current-page {
     position: relative;
     color: #404bbf;
+}
+
+.header .social-media,
+.header .close-btn {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background-color: transparent;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* All icon styles */
@@ -204,7 +214,6 @@ a {
 }
 
 .flexbox-entity {
-    width: calc((100% - 3 * 24px) / 4);
     max-width: 264px;
     display: flex;
     flex-direction: column;
@@ -680,20 +689,6 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     fill: #f4f4fd;
 }
 
-.menu-btn {
-    display: none;
-    border: none;
-    background-color: transparent;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
-.menu-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (min-resolution: 192dpi) {
     main-page {
         background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office@2x.jpg);
@@ -702,16 +697,6 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 
 /* Mobile mode - up to 320px */
 @media (max-width: 320px) {
-    .container {
-        max-width: 100%;
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-
-    .logo {
-        margin: 0;
-    }
-
     /* #region header styles */
     .header-flexbox {
         width: 100%;
@@ -743,30 +728,28 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
     .menu-modal-active .mobile-menu-item {
         display: flex;
     }
-
     .menu-modal-active .menu-btn {
         display: none;
     }
-
     .menu-modal-active .logo {
         display: none;
     }
 
-    .mobile-menu-close {
+    .menu-modal-active .close-btn {
         background-color: transparent;
         border-color: #e7e9fc;
     }
 
-    .mobile-menu-close:active,
-    .mobile-menu-close:focus,
-    .mobile-menu-close:hover {
+    .menu-modal-active .close-btn:active,
+    .menu-modal-active .close-btn:focus,
+    .menu-modal-active .close-btn:hover {
         background-color: #404bbf;
     }
 
     .menu-modal-active .header-flexbox {
         flex-direction: column;
         align-items: start;
-        margin-bottom: auto;
+        /* margin-bottom: auto; */
     }
 
     .header-list {
@@ -774,9 +757,9 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         align-items: start;
     }
 
-    .header-address {
+    /* .header-address {
         margin: 0;
-    }
+    } */
 
     .header-address .header-list {
         gap: 24px;
@@ -784,7 +767,7 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         letter-spacing: 0.4px;
     }
 
-    .header-social-media {
+    .social-media {
         justify-content: space-between;
     }
 
@@ -820,9 +803,6 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
         flex-direction: column;
         align-items: center;
         gap: 72px;
-    }
-    .flexbox-entity {
-        width: 100%;
     }
 
     /* #endregion */
@@ -923,4 +903,18 @@ input[type='checkbox']:checked + .checkbox-label > span > .checkbox-icon {
 }
 /* Desktop mode - from 1158px */
 @media (min-width: 1158px) {
+    .container {
+        width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .header-flexbox {
+        justify-content: center;
+        align-items: center;
+        gap: 76px;
+    }
+    .flexbox-entity {
+        width: calc((100% - 3 * 24px) / 4);
+    }
 }
